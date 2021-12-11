@@ -4,5 +4,5 @@ matplotlib
 tensorflow-cpu
 sklearn
 scipy
-PySimpleGUI
-PIL
+pysimplegui
+pillow
