@@ -8,6 +8,7 @@ pip install -r 'requirements.txt'
 ```
 
 ## Các tệp đính kèm gồm
+[u.item:](u.item) Tệp lưu các dữ liệu về tên của các movie trong bộ dữ liệu
 
 [Data.csv:](Data.csv) Tệp lưu thông tin về số user và số movie
 
@@ -28,25 +29,5 @@ pip install -r 'requirements.txt'
 - Hàm thay đổi dữ liệu: add_new_rating(user, movie, rating) và change_rating(user, movie, rating)
 
 ## Thực thi chương trình
-
-Tạm thời chương trình có thể chạy trên console như sau:
-
-Lưu ý: Tập dữ liệu movielens-100k user, movie được đánh id từ 1, ở đây đã chuẩn hóa dữ liệu với id được đánh từ 0
-
-```bash
-import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-from sklearn.metrics.pairwise import cosine_similarity
-from scipy import sparse
-from Memory_Base import Memory_Base
-import process as app
-
-# các hàm trong process có thể sử dụng thông qua app
-# model.recommend(user) trả về một list các bộ phim  đề xuất cho người dùng
-model = app.process()
-print(model.recommend(0))
-model.change_rating(0, 32, 5)
-app.save_data(model.rate, model.similarity_matrix)
-```
+ 
+ Khi khởi tạo chương trình giao diện gồm phần display vào nút Enter UserID, người dùng sử dụng nút này để nhập ID của người dùng, hệ thống sẽ hiển thị các bộ phim được gợi ý trong số các bộ phim trong bộ dữ liệu được model tạo ra
